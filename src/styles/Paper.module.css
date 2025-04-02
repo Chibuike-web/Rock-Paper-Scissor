@@ -1,0 +1,20 @@
+.paper {
+	background: var(--paperGradient);
+	background-repeat: no-repeat;
+	background-size: cover;
+	box-shadow: 0 8px 0 0 hsla(229, 64%, 46%, 1);
+}
+
+.scissors {
+	background: var(--scissorsGradient);
+	background-repeat: no-repeat;
+	background-size: cover;
+	box-shadow: 0 8px 0 0 hsla(28, 76%, 44%, 1);
+}
+
+.rock {
+	background: var(--rockGradient);
+	background-repeat: no-repeat;
+	background-size: cover;
+	box-shadow: 0 8px 0 0 hsla(348, 76%, 35%, 1);
+}
