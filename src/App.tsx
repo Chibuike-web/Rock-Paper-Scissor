@@ -10,7 +10,6 @@ import { useState } from "react";
 import styles from "./styles/Paper.module.css";
 
 function App() {
-	const [showModal, setShowModal] = useState(false);
 	return (
 		<main className="pt-12 min-h-[768px] ">
 			<section className="mx-auto relative max-w-[43.75rem]  flex w-full items-center justify-between px-5 py-4 border-[3px] border-[var(--headerOutline)] rounded-[1rem] max-h-[9.375rem]">
@@ -52,47 +51,53 @@ function App() {
 					</figure>
 				</button>
 			</section>
+
+			<RulesModal />
+		</main>
+	);
+}
+
+const RulesModal = () => {
+	const [showModal, setShowModal] = useState(false);
+	return (
+		<>
 			<p
 				className="text-white absolute right-[2rem] bottom-[2rem] border-[1px] px-6 py-[8px] rounded-[8px] tracking-[0.2em] cursor-pointer"
 				onClick={() => setShowModal(true)}
 			>
 				RULES
 			</p>
-			{showModal && <RulesModal setShowModal={setShowModal} />}
-		</main>
-	);
-}
-
-const RulesModal = ({ setShowModal }: { setShowModal: (value: boolean) => void }) => {
-	return (
-		<div
-			className="bg-black/50 fixed inset-0 justify-items-center content-center"
-			onClick={(e) => {
-				e.stopPropagation();
-				setShowModal(false);
-			}}
-		>
-			<article
-				className="bg-white px-8 py-8 w-full max-w-[400px] rounded-xl justify-items-center"
-				onClick={(e) => {
-					e.stopPropagation();
-				}}
-			>
-				<header className="flex justify-between mb-10 w-full items-center">
-					<h1 className="text-[32px] font-bold">RULES</h1>
-					<button
-						className="cursor-pointer"
-						type="button"
-						onClick={() => {
-							setShowModal(false);
+			{showModal && (
+				<div
+					className="bg-black/50 fixed inset-0 justify-items-center content-center"
+					onClick={(e) => {
+						e.stopPropagation();
+						setShowModal(false);
+					}}
+				>
+					<article
+						className="bg-white px-8 py-8 w-full max-w-[400px] rounded-xl justify-items-center"
+						onClick={(e) => {
+							e.stopPropagation();
 						}}
 					>
-						<img src={CancelIcon} alt="Cancel Icon" />
-					</button>
-				</header>
-				<img src={Rules} alt="image of the rules" />
-			</article>
-		</div>
+						<header className="flex justify-between mb-10 w-full items-center">
+							<h1 className="text-[32px] font-bold">RULES</h1>
+							<button
+								className="cursor-pointer"
+								type="button"
+								onClick={() => {
+									setShowModal(false);
+								}}
+							>
+								<img src={CancelIcon} alt="Cancel Icon" />
+							</button>
+						</header>
+						<img src={Rules} alt="image of the rules" />
+					</article>
+				</div>
+			)}
+		</>
 	);
 };
 
