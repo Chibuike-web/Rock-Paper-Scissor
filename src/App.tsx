@@ -1,16 +1,18 @@
 import "./globals.css";
-import Triangle from "./assets/bg-triangle.svg";
-import CancelIcon from "./assets/icon-close.svg";
-import Rules from "./assets/image-rules.svg";
+
 import { useState } from "react";
-import Button from "./components/Button";
+import GameButton from "./components/GameButton";
+import Modal from "./components/Modal";
+import PlaySection from "./components/PlaySection";
 
 function App() {
 	const [play, setPlay] = useState<boolean>(false);
+	const [buttonId, setButtonId] = useState<string>("");
 
 	const handleClick = (id: string) => {
 		console.log(id);
 		setPlay(true);
+		setButtonId(id);
 	};
 	return (
 		<main className="pt-12 justify-items-center content-center min-h-screen">
@@ -23,71 +25,13 @@ function App() {
 					</div>
 				</section>
 
-				{!play && (
-					<div className="min-h-[400px]">
-						<section className="mx-auto relative w-full max-w-[26.75rem]  justify-items-center">
-							<img
-								src={Triangle}
-								alt="Triangle background"
-								className="w-full max-w-[17.94rem] mt-[10.125rem]"
-							/>
+				{!play && <PlaySection handleClick={handleClick} />}
 
-							<Button paper handleClick={handleClick} />
-							<Button scissor handleClick={handleClick} />
-							<Button rock handleClick={handleClick} />
-						</section>
-					</div>
-				)}
-
-				{play && <Button />}
-				<RulesModal />
+				{play && <GameButton buttonId={buttonId} />}
+				<Modal />
 			</div>
 		</main>
 	);
 }
-
-const RulesModal = () => {
-	const [showModal, setShowModal] = useState(false);
-	return (
-		<>
-			<p
-				className="text-white absolute right-[2rem] bottom-[2rem] border-[1px] px-6 py-[8px] rounded-[8px] tracking-[0.2em] cursor-pointer"
-				onClick={() => setShowModal(true)}
-			>
-				RULES
-			</p>
-			{showModal && (
-				<div
-					className="bg-black/50 fixed inset-0 justify-items-center content-center"
-					onClick={(e) => {
-						e.stopPropagation();
-						setShowModal(false);
-					}}
-				>
-					<article
-						className="bg-white px-8 py-8 w-full max-w-[400px] rounded-xl justify-items-center"
-						onClick={(e) => {
-							e.stopPropagation();
-						}}
-					>
-						<header className="flex justify-between mb-10 w-full items-center">
-							<h1 className="text-[32px] font-bold">RULES</h1>
-							<button
-								className="cursor-pointer"
-								type="button"
-								onClick={() => {
-									setShowModal(false);
-								}}
-							>
-								<img src={CancelIcon} alt="Cancel Icon" />
-							</button>
-						</header>
-						<img src={Rules} alt="image of the rules" />
-					</article>
-				</div>
-			)}
-		</>
-	);
-};
 
 export default App;

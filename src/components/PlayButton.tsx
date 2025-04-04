@@ -4,13 +4,14 @@ import IconScissor from "../assets/icon-scissors.svg";
 import IconRock from "../assets/icon-rock.svg";
 
 type ButtonProps = {
-	handleClick: (value: string) => void;
+	buttonId?: string;
+	handleClick?: (value: string) => void;
 	paper?: boolean;
 	rock?: boolean;
 	scissor?: boolean;
 };
 
-export default function Button({ handleClick, paper, rock, scissor }: ButtonProps) {
+export default function Button({ handleClick, paper, rock, scissor, buttonId }: ButtonProps) {
 	let image, id, positionClass;
 
 	if (paper) {
@@ -25,8 +26,6 @@ export default function Button({ handleClick, paper, rock, scissor }: ButtonProp
 		image = IconRock;
 		id = "rock";
 		positionClass = `absolute bottom-0 translate-y-1/2 translate-x-[55%] ${styles.rock}`;
-	} else {
-		positionClass = "";
 	}
 
 	return (
@@ -34,7 +33,7 @@ export default function Button({ handleClick, paper, rock, scissor }: ButtonProp
 			id={id}
 			type="button"
 			className={`w-[12.5rem] h-[12.5rem] bg-red-100 rounded-full justify-items-center content-center ${positionClass}`}
-			onClick={(e) => handleClick(e.currentTarget.id)}
+			onClick={(e) => handleClick && handleClick(e.currentTarget.id)}
 		>
 			<figure className="bg-white w-[9rem] h-[9rem] rounded-full grid place-items-center">
 				<img src={image} alt={`Icon for ${id}`} className="w-full max-w-[4rem]" />
