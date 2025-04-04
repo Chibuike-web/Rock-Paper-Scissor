@@ -28,7 +28,7 @@ export default function Button({ buttonId }: ButtonProps) {
 		<button
 			id={id}
 			type="button"
-			className={`w-[18.75rem] h-[18.5rem] bg-red-100 rounded-full justify-items-center content-center ${buttonStyles}`}
+			className={`w-[18.75rem] h-[18.75rem] bg-red-100 rounded-full justify-items-center content-center ${buttonStyles}`}
 		>
 			<figure className="bg-white w-[14rem] h-[14rem] rounded-full grid place-items-center">
 				<img src={image} alt={`Icon for ${id}`} className="w-full max-w-[6rem]" />

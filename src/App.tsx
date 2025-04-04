@@ -10,6 +10,8 @@ function App() {
 	const [computerId, setComputerId] = useState<string>("");
 	const [result, setResult] = useState<string>("");
 	const [points, setPoints] = useState<number>(0);
+	const choice = ["paper", "scissor", "rock"];
+	const randomChoice = Math.floor(Math.random() * 3);
 
 	useEffect(() => {
 		if (!playerId || !computerId) return;
@@ -43,7 +45,7 @@ function App() {
 
 	const computerPlayer = () => {
 		setTimeout(() => {
-			setComputerId("rock");
+			setComputerId(choice[randomChoice]);
 		}, 1000);
 	};
 
