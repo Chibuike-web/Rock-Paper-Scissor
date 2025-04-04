@@ -1,21 +1,22 @@
 import "./globals.css";
-
 import { useState } from "react";
-import GameButton from "./components/GameButton";
 import Modal from "./components/Modal";
 import PlaySection from "./components/PlaySection";
+import GameSection from "./components/GameSection";
 
 function App() {
 	const [play, setPlay] = useState<boolean>(false);
-	const [buttonId, setButtonId] = useState<string>("");
+	const [playerId, setPlayerId] = useState<string>("");
+	const [computerId, setComputerId] = useState<string>("");
 
 	const handleClick = (id: string) => {
 		console.log(id);
 		setPlay(true);
-		setButtonId(id);
+		setPlayerId(id);
+		setComputerId("rock");
 	};
 	return (
-		<main className="pt-12 justify-items-center content-center min-h-screen">
+		<main className="pt-12">
 			<div className="w-full min-h-full">
 				<section className="mx-auto relative max-w-[43.75rem] flex w-full items-center justify-between px-5 py-4 border-[3px] border-[var(--headerOutline)] rounded-[1rem] max-h-[9.375rem]">
 					<img src="/logo.svg" alt="Logo" className="w-full max-w-[9.72rem]" />
@@ -27,7 +28,7 @@ function App() {
 
 				{!play && <PlaySection handleClick={handleClick} />}
 
-				{play && <GameButton buttonId={buttonId} />}
+				{play && <GameSection playerId={playerId} computerId={computerId} />}
 				<Modal />
 			</div>
 		</main>

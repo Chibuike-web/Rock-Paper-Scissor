@@ -11,7 +11,7 @@ type ButtonProps = {
 	scissor?: boolean;
 };
 
-export default function Button({ handleClick, paper, rock, scissor, buttonId }: ButtonProps) {
+export default function Button({ handleClick, paper, rock, scissor }: ButtonProps) {
 	let image, id, positionClass;
 
 	if (paper) {
@@ -20,7 +20,7 @@ export default function Button({ handleClick, paper, rock, scissor, buttonId }: 
 		positionClass = `absolute top-0 left-0 -translate-y-1/2 -translate-x-[10%] ${styles.paper}`;
 	} else if (scissor) {
 		image = IconScissor;
-		id = "scissors";
+		id = "scissor";
 		positionClass = ` absolute top-0 right-0 -translate-y-1/2 translate-x-[10%] ${styles.scissors}`;
 	} else if (rock) {
 		image = IconRock;
@@ -32,7 +32,7 @@ export default function Button({ handleClick, paper, rock, scissor, buttonId }: 
 		<button
 			id={id}
 			type="button"
-			className={`w-[12.5rem] h-[12.5rem] bg-red-100 rounded-full justify-items-center content-center ${positionClass}`}
+			className={`w-[12.5rem] h-[12.5rem] bg-red-100 rounded-full justify-items-center content-center cursor-pointer ${positionClass}`}
 			onClick={(e) => handleClick && handleClick(e.currentTarget.id)}
 		>
 			<figure className="bg-white w-[9rem] h-[9rem] rounded-full grid place-items-center">

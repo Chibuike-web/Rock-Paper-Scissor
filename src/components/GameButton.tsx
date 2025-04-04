@@ -17,21 +17,21 @@ export default function Button({ buttonId }: ButtonProps) {
 	} else if (buttonId === "scissor") {
 		image = IconScissor;
 		id = "scissors";
-		buttonStyles = ` absolute top-0 right-0 -translate-y-1/2 translate-x-[10%] ${styles.scissors}`;
+		buttonStyles = `${styles.scissors}`;
 	} else if (buttonId === "rock") {
 		image = IconRock;
 		id = "rock";
-		buttonStyles = `absolute bottom-0 translate-y-1/2 translate-x-[55%] ${styles.rock}`;
+		buttonStyles = `${styles.rock}`;
 	}
 
 	return (
 		<button
 			id={id}
 			type="button"
-			className={`w-[12.5rem] h-[12.5rem] bg-red-100 rounded-full justify-items-center content-center ${buttonStyles}`}
+			className={`w-[18.75rem] h-[18.5rem] bg-red-100 rounded-full justify-items-center content-center ${buttonStyles}`}
 		>
-			<figure className="bg-white w-[9rem] h-[9rem] rounded-full grid place-items-center">
-				<img src={image} alt={`Icon for ${id}`} className="w-full max-w-[4rem]" />
+			<figure className="bg-white w-[14rem] h-[14rem] rounded-full grid place-items-center">
+				<img src={image} alt={`Icon for ${id}`} className="w-full max-w-[6rem]" />
 			</figure>
 		</button>
 	);
