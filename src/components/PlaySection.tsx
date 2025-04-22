@@ -8,7 +8,7 @@ export default function PlaySection({ handleClick }: { handleClick: (value: stri
 				<img
 					src={Triangle}
 					alt="Triangle background"
-					className="w-full max-w-[17.94rem] mt-[10.125rem]"
+					className="w-full max-w-[183.86px] md:max-w-[17.94rem] mt-[10.125rem]"
 				/>
 
 				<PlayButton paper handleClick={handleClick} />

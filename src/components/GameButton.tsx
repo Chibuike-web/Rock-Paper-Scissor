@@ -2,6 +2,7 @@ import styles from "../styles/Button.module.css";
 import IconPaper from "../assets/icon-paper.svg";
 import IconScissor from "../assets/icon-scissors.svg";
 import IconRock from "../assets/icon-rock.svg";
+import { motion } from "motion/react";
 
 type ButtonProps = {
 	buttonId?: string;
@@ -25,7 +26,10 @@ export default function Button({ buttonId }: ButtonProps) {
 	}
 
 	return (
-		<button
+		<motion.button
+			initial={{ opacity: 0, scale: 0 }}
+			animate={{ opacity: 1, scale: 1 }}
+			transition={{ duration: 0.5 }}
 			id={id}
 			type="button"
 			className={`w-[18.75rem] h-[18.75rem] bg-red-100 rounded-full justify-items-center content-center ${buttonStyles}`}
@@ -33,6 +37,6 @@ export default function Button({ buttonId }: ButtonProps) {
 			<figure className="bg-white w-[14rem] h-[14rem] rounded-full grid place-items-center">
 				<img src={image} alt={`Icon for ${id}`} className="w-full max-w-[6rem]" />
 			</figure>
-		</button>
+		</motion.button>
 	);
 }

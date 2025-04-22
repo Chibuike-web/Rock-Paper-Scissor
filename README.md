@@ -6,10 +6,9 @@ This is a visually enhanced version of the classic Rock Paper Scissors game, fea
 
 ## Features
 
-- 🎮 **Intuitive Gameplay** – Choose between Rock, Paper, or Scissors
+- 🎮 **Easy Gameplay** – Choose between Rock, Paper, or Scissors
 - 📊 **Scoring System** – Keep track of your progress
 - 🔍 **Rules Popup** – Easily accessible game rules
-- 🎨 **Modern UI** – Sleek design with smooth animations
 
 ## How to Play
 
