@@ -1,4 +1,5 @@
 import GameButton from "../components/GameButton";
+import { motion } from "motion/react";
 
 type GameSectionProps = {
 	playerId: string;
@@ -16,7 +17,12 @@ export default function GameSection({ playerId, computerId, result, playAgain }:
 					<GameButton buttonId={playerId} />
 				</div>
 				{result && (
-					<div className="justify-items-center">
+					<motion.div
+						className="justify-items-center"
+						initial={{ opacity: 0, y: 50 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{ duration: 0.5 }}
+					>
 						<h1 className="text-[48px] mb-[8px]">{result}</h1>
 						<button
 							type="button"
@@ -25,7 +31,7 @@ export default function GameSection({ playerId, computerId, result, playAgain }:
 						>
 							PLAY AGAIN
 						</button>
-					</div>
+					</motion.div>
 				)}
 
 				<div className="flex flex-col items-center gap-[64px] relative">
