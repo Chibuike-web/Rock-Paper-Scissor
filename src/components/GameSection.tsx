@@ -14,7 +14,7 @@ export default function GameSection({ playerId, computerId, result, playAgain }:
 			<div className="text-white flex items-center gap-[76px]">
 				<div className="flex flex-col items-center gap-[64px] relative">
 					<p className="tracking-[0.2em] text-[20px]">YOU PICKED</p>
-					<GameButton buttonId={playerId} />
+					<GameButton buttonId={playerId} result={result} />
 				</div>
 				{result && (
 					<motion.div
