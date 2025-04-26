@@ -7,14 +7,14 @@ export default function Modal() {
 	return (
 		<>
 			<p
-				className="text-white absolute right-[2rem] bottom-[2rem] border-[1px] px-6 py-[8px] rounded-[8px] tracking-[0.2em] cursor-pointer"
+				className="text-white absolute left-1/2 -translate-x-1/2 md:left-auto md:-translate-x-0 md:right-[2rem] bottom-[2rem] border-[1px] px-6 py-[8px] rounded-[8px] tracking-[0.2em] cursor-pointer"
 				onClick={() => setShowModal(true)}
 			>
 				RULES
 			</p>
 			{showModal && (
 				<div
-					className="bg-black/50 fixed inset-0 justify-items-center content-center"
+					className="bg-black/50 fixed inset-0 justify-items-center content-center px-6"
 					onClick={(e) => {
 						e.stopPropagation();
 						setShowModal(false);

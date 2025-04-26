@@ -64,12 +64,12 @@ function App() {
 	};
 	return (
 		<main className="pt-12">
-			<div className="w-full min-h-full">
-				<section className="mx-auto relative max-w-[43.75rem] flex w-full items-center justify-between px-5 py-4 border-[3px] border-[var(--headerOutline)] rounded-[1rem] max-h-[9.375rem]">
-					<img src="/logo.svg" alt="Logo" className="w-full max-w-[9.72rem]" />
-					<div className="bg-white justify-items-center py-4 rounded-[0.5rem] w-full max-w-[120px]">
+			<div className="w-full min-h-full px-6">
+				<section className="md:mx-auto relative md:max-w-[43.75rem]  flex w-full items-center justify-between px-3 md:px-5 py-4 border-[3px] border-[var(--headerOutline)] rounded-[10px] md:rounded-[1rem] max-h-[6rem] md:max-h-[9.375rem] ">
+					<img src="/logo.svg" alt="Logo" className="w-full md:max-w-[9.72rem] max-w-[6rem]" />
+					<div className="bg-white justify-items-center py-[0.5rem] md:py-4 rounded-[4px] md:rounded-[0.5rem] w-full max-w-[80px] h-full md:max-w-[120px]">
 						<p className="text-[var(--scoreText)] text-[0.875rem] tracking-wider">SCORE</p>
-						<h1 className="text-[3rem] font-bold text-[var(--darkText)] px-10 leading-[1em]">
+						<h1 className="text-[2rem] md:text-[3rem] font-bold text-[var(--darkText)] px-10 leading-[1em]">
 							{points}
 						</h1>
 					</div>

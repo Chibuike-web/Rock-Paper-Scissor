@@ -25,18 +25,18 @@ export default function Button({ handleClick, paper, rock, scissor }: ButtonProp
 	} else if (rock) {
 		image = IconRock;
 		id = "rock";
-		positionClass = `absolute bottom-0 translate-y-1/2 translate-x-[55%] ${styles.rock}`;
+		positionClass = `absolute bottom-0 translate-y-1/2 translate-x-[70%] ${styles.rock}`;
 	}
 
 	return (
 		<button
 			id={id}
 			type="button"
-			className={`w-[6.5rem] h-[6.5rem] md:w-[12.5rem] md:h-[12.5rem] bg-red-100 rounded-full justify-items-center content-center cursor-pointer ${positionClass}`}
+			className={`w-[8rem] h-[8rem] md:w-[12.5rem] md:h-[12.5rem] bg-red-100 rounded-full justify-items-center content-center cursor-pointer ${positionClass}`}
 			onClick={(e) => handleClick && handleClick(e.currentTarget.id)}
 		>
-			<figure className="bg-white w-[4.5rem] h-[4.5rem] md:w-[9rem] md:h-[9rem] rounded-full grid place-items-center">
-				<img src={image} alt={`Icon for ${id}`} className="w-full max-w-[2rem] md:max-w-[4rem] " />
+			<figure className="bg-white w-[6rem] h-[6rem] md:w-[9rem] md:h-[9rem] rounded-full grid place-items-center">
+				<img src={image} alt={`Icon for ${id}`} className="w-full max-w-[3rem] md:max-w-[4rem] " />
 			</figure>
 		</button>
 	);

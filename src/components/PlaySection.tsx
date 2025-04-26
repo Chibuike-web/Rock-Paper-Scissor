@@ -4,7 +4,7 @@ import Triangle from "../assets/bg-triangle.svg";
 export default function PlaySection({ handleClick }: { handleClick: (value: string) => void }) {
 	return (
 		<div className="min-h-[400px]">
-			<section className="mx-auto relative w-full max-w-[26.75rem]  justify-items-center">
+			<section className="mx-auto relative w-full max-w-[20rem] md:max-w-[30rem] justify-items-center">
 				<img
 					src={Triangle}
 					alt="Triangle background"

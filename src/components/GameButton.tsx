@@ -40,10 +40,10 @@ export default function Button({ buttonId, result }: ButtonProps) {
 				transition={{ duration: 0.5 }}
 				id={id}
 				type="button"
-				className={`w-[18.75rem] h-[18.75rem] bg-red-100 rounded-full justify-items-center content-center ${buttonStyles}`}
+				className={`w-[8rem] h-[8rem] md:w-[18.75rem] md:h-[18.75rem] bg-red-100 rounded-full justify-items-center content-center ${buttonStyles}`}
 			>
-				<figure className="bg-white w-[14rem] h-[14rem] rounded-full grid place-items-center">
-					<img src={image} alt={`Icon for ${id}`} className="w-full max-w-[6rem]" />
+				<figure className="bg-white w-[6rem] h-[6rem] md:w-[14rem] md:h-[14rem] rounded-full grid place-items-center">
+					<img src={image} alt={`Icon for ${id}`} className="w-full max-w-[3rem] md:max-w-[6rem]" />
 				</figure>
 			</motion.button>
 		</div>
